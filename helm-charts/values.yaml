@@ -6,7 +6,7 @@ helloworld:
     gatewayHost: pending
     port: 101010
   image:
-    name: techzer/helloworld
+    name: ssejzer/helloworld
     tag: 1
 
 envoy:
