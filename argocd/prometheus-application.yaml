@@ -11,6 +11,10 @@ spec:
     targetRevision: 25.18.0
     helm:
       values: |
+        server:
+          service:
+            specs:
+              type: NodePort
         alertmanager:
           enabled: true
         pushgateway:

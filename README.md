@@ -14,6 +14,8 @@ Development and testing scripts
 
 ## Infrastructure
 
+It's a self-managed Kubernetes cluster installed in a single VM (Master and Node)
+
 The deployment runs in the "challenge" namespace
 
 DIAGRAM HERE!!!!
@@ -50,11 +52,12 @@ docker pull techzer/helloworld:2
 
 ### URLs
 
-because it's not a cloud service provider,
-I had to change the loadbalancers type to nodeport
+Because it's not a cloud service provider, it's missing the cloud controllers. I wasn't able to make API Gateway work.
+I created new NodePort services that run in the only node
+The NodePort services are located at /argocd/custom-services
 
 To access the aplication:
-[Link](http://challenge.hitechist.com:30174/)
+[Link](http://challenge.hitechist.com:32003/)
 
 ### Testing the application
 
