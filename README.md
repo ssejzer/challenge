@@ -1,3 +1,5 @@
+![Challenge Picture](cover.png?raw=true "Challenge")
+
 # challenge
 
 
