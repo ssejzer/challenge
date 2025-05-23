@@ -2,15 +2,10 @@
 
 # DevOps Challenge
 
+``diff
+- This application is not ready for production and does not have security measures implemented
+```
 
-
-## Folder structure
-
-/src
-Contains the source code of the app. It's just 1 file.
-
-/scripts
-Development and testing scripts 
 
 ## Infrastructure
 
@@ -19,6 +14,14 @@ It's a self-managed Kubernetes cluster installed in a single VM (Master and Node
 The deployment runs in the "challenge" namespace
 
 DIAGRAM HERE!!!!
+
+## Folder structure
+
+/src
+Contains the source code of the app. It's just 1 file.
+
+/scripts
+Development and testing scripts 
 
 ### ArgoCD
 

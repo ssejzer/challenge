@@ -15,6 +15,10 @@ spec:
           enabled: false
         pushgateway:
           enabled: true
+        replicas: 1
+        podDisruptionBudget:
+          enabled: false
+        resources: {}
         server:
           service:
             type: LoadBalancer
