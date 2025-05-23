@@ -1,0 +1,13 @@
+apiVersion: v2
+name: challenge
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+dependencies:
+- name: helloworld
+  version: 1.0.0
+  repository: "helloworld"
+- name: envoy
+  version: 1.0.0
+  repository: "envoy"
+
