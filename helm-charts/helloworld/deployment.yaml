@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: techzer/helloworld:1
+        #image: techzer/helloworld:1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8080
         resources:
@@ -50,13 +51,13 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: helloworld
-  minReplicas: 2
-  maxReplicas: 10
+  minReplicas: {{ .Values.hpa.minReplicas }}
+  maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50
+        averageUtilization: {{ .Values.hpa.CPUAverageUtilization }}
 

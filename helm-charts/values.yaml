@@ -1,11 +1,20 @@
 helloworld:
-  build:
-    enabled: false
-  deploy:
-    route:
-      tls:
-        enabled: true
-    replicas: 1
+  hpa:
+    minReplicas: 2
+    maxReplicas: 10
+    CPUAverageUtilization: 50
+    gatewayHost: pending
+    port: 101010
   image:
-    name: techzer/helloworld:1
+    name: techzer/helloworld
+    tag: 1
 
+envoy:
+  image:
+    repository: envoyproxy/envoy
+    tag: v1.29-latest
+  replicaCount: 1
+  service:
+    port: 80
+  gateway:
+    host: "challenge.hitechist.com"
