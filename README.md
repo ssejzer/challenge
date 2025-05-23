@@ -20,7 +20,7 @@ DIAGRAM HERE!!!!
 
 ArgoCD services run in the "argocd" namespace
 
-UI: https://challenge.hitechist.com:31522/
+To access ArgoCD UI: https://challenge.hitechist.com:31522/
 
 GitHub SSO allows members of the "sejzer" organization
 
@@ -46,9 +46,13 @@ https://hub.docker.com/r/techzer/helloworld
 Usage:
 docker pull techzer/helloworld:2
 
-### URL
+### URLs
 
-http://challenge.hitechist.com:31080/
+because it's not a cloud service provider,
+I had to change the loadbalancers type to nodeport
+
+To access the aplication:
+http://challenge.hitechist.com:30174/
 
 ### Testing the application
 
