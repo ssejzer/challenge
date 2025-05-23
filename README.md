@@ -37,9 +37,7 @@ GitHub SSO allows members of the "sejzer" organization
 
 ### Prometheus
 
-Config
-URL...
-????????????
+To access Prometheus: [Link](http://challenge.hitechist.com:32001/)
 
 ## The application
 
@@ -55,10 +53,6 @@ docker pull techzer/helloworld:2
 
 ### URLs
 
-Because it's not a cloud service provider, it's missing the cloud controllers. I wasn't able to make API Gateway work.
-I created new NodePort services that run in the only node
-The NodePort services are located at /argocd/custom-services
-
 To access the aplication:
 [Link](http://challenge.hitechist.com:32003/)
 
@@ -73,5 +67,17 @@ Application repository URL:
 
 just update the image in the master branch and ArgoCD will deploy it in the next minutes!
 
+## Issues I had during the setup
 
+I didn't understand why there is a hockey stick
+
+I had a hard time finding why the Envoy didn't work until I realized it's because there is no Load Balancer Controller in self-managed clusters.
+In the past, I worked with Azure Kubernetes for production and minikube for dev. Lesson learned!
+The solution was to create NodePort services.
+The NodePort services are located at /argocd/custom-services
+
+The Prometheus POD didn't start because there wasn't available resources but there was plenty of CPU and RAM.
+I found that for the self-mananged cluster I have to enable a storage class in order to the PVC get the requested storage.
+The error was: "no persistent volumes available for this claim and no storage class is set"
+The solution was to create a 100GB PersistentVolume (named "local-pv" ) pointing to a host path.
 
