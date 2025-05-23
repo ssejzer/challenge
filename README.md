@@ -1,6 +1,6 @@
 ![Challenge Picture](cover.png?raw=true "Challenge")
 
-# challenge
+# DevOps Challenge
 
 
 
@@ -22,7 +22,7 @@ DIAGRAM HERE!!!!
 
 ArgoCD services run in the "argocd" namespace
 
-To access ArgoCD UI: https://challenge.hitechist.com:31522/
+To access ArgoCD UI: [Link](https://challenge.hitechist.com:31522/)
 
 GitHub SSO allows members of the "sejzer" organization
 
@@ -43,7 +43,7 @@ There new feature in version 2 is that it also prints the version.
 
 ### Public Image repository
 
-https://hub.docker.com/r/techzer/helloworld
+[Docker Hub](https://hub.docker.com/r/techzer/helloworld)
 
 Usage:
 docker pull techzer/helloworld:2
@@ -54,7 +54,7 @@ because it's not a cloud service provider,
 I had to change the loadbalancers type to nodeport
 
 To access the aplication:
-http://challenge.hitechist.com:30174/
+[Link](http://challenge.hitechist.com:30174/)
 
 ### Testing the application
 
@@ -63,7 +63,7 @@ http://challenge.hitechist.com:30174/
 ### Application Deployment
 
 Application repository URL:
-https://github.com/ssejzer/challenge
+[Link](https://github.com/ssejzer/challenge)
 
 just update the image in the master branch and ArgoCD will deploy it in the next minutes!
 
