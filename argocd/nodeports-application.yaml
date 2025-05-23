@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nodeport-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ssejzer/challenge.git
+    targetRevision: HEAD
+    path: argocd/custom-services
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
