@@ -1,15 +1,14 @@
-# prometheus-app.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: prometheus
-  namespace: argocd  # Change if Argo CD is in a different namespace
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus
-    targetRevision: 25.18.0  # Check latest version with `helm search repo prometheus`
+    targetRevision: 25.18.0
     helm:
       values: |
         alertmanager:
