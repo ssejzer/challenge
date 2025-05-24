@@ -6,19 +6,29 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kubernetes-sigs/metrics-server
-    targetRevision: HEAD
-    path: manifests/base
+    repoURL: https://kubernetes-sigs.github.io/metrics-server/
+    targetRevision: latest
+    chart: metrics-server
     helm:
-      values: |
-        metrics-server:
-          args:
-            - --cert-dir=/tmp
-            - --secure-port=10250
-            - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-            - --kubelet-use-node-status-port
-            - --metric-resolution=15s
-            - --kubelet-insecure-tls
+      parameters:
+        - name: args
+          value: >-
+            {--cert-dir=/tmp,--secure-port=10250,--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname,--kubelet-use-node-status-port,--metric-resolution=15s,--kubelet-insecure-tls}
+
+
+    #repoURL: https://github.com/kubernetes-sigs/metrics-server
+    #targetRevision: HEAD
+    #path: manifests/base
+    #helm:
+    #  values: |
+    #    metrics-server:
+    #      args:
+    #        - --cert-dir=/tmp
+    #        - --secure-port=10250
+    #        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+    #        - --kubelet-use-node-status-port
+    #        - --metric-resolution=15s
+    #        - --kubelet-insecure-tls
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
