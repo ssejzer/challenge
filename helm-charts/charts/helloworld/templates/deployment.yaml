@@ -9,12 +9,13 @@ spec:
       app: helloworld
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
       labels:
         app: helloworld
     spec:
       containers:
       - name: helloworld
-        #image: techzer/helloworld:1
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8080
@@ -32,16 +33,10 @@ metadata:
 spec:
   selector:
     app: helloworld
-  #type: NodePort
   ports:
   - port: 80
     protocol: TCP
     targetPort: 8080
-  #- name: http
-  #  nodePort: 31080
-  #  port: 80
-  # protocol: TCP
-  #  targetPort: 8080
 ---
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute

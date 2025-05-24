@@ -47,6 +47,13 @@ There are 2 roles defined in [argocd-rbac-cm.yaml](argocd/argocd-rbac-cm.yaml)
 
 ### Prometheus
 
+Prometheus collects metrics from the resources with `prometheus.io/scrape` set to `true`.
+
+```yaml
+annotations:
+prometheus.io/scrape: 'true'
+```
+
 To access Prometheus: [Link](http://challenge.hitechist.com:32001/)
 
 ## The application
