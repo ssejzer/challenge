@@ -19,9 +19,9 @@ spec:
         podDisruptionBudget:
           enabled: false
         resources: {}
-        server:
-          service:
-            type: LoadBalancer
+        #server:
+        #  service:
+        #    type: LoadBalancer
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
