@@ -1,7 +1,7 @@
 helloworld:
   image:
     repository: techzer/helloworld
-    tag: 1
+    tag: 2
   hpa:
     minReplicas: 2
     maxReplicas: 10
