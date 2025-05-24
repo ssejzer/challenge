@@ -35,9 +35,9 @@ spec:
           requests:
             cpu: "50m"
             memory: "4Mi"
-          limits:
-            cpu: "500m"
-            memory: "32Mi"
+          #limits:
+          #  cpu: "500m"
+          #  memory: "32Mi"
 
 ---
 apiVersion: v1
