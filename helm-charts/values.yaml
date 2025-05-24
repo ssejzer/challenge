@@ -8,8 +8,8 @@ helloworld:
   image:
     repository: techzer/helloworld
     tag: 1
-  httproute:
-    host: "challenge.hitechist.com"
+  #httproute:
+  #  host: "challenge.hitechist.com"
 
 envoy:
   image:
