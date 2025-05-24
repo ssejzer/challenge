@@ -14,7 +14,7 @@ data:
     p, role:developer, applications, override, default/*, allow
     p, role:developer, applications, action/*, default/*, allow
 
-    g, ssejzer@techzer.com.ar, role:admin
+    g, ssejzer@techzer.com.ar, role:developer
 
   policy.default: role:readonly
   scopes: '[groups, email]'
