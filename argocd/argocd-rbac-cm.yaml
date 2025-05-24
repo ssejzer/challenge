@@ -6,8 +6,16 @@ data:
     # Full access
     p, role:admin, *, *, *, allow
 
-    g, github:ssejzer@techzer.com.ar, role:admin
-    g, ssejzer@techzer.com.ar, role:admin
+    # Only applications
+    p, role:developer, applications, get, default/*, allow
+    p, role:developer, applications, sync, default/*, allow
+    p, role:developer, applications, create, default/*, allow
+    p, role:developer, applications, update, default/*, allow
+    p, role:developer, applications, override, default/*, allow
+    p, role:developer, applications, action/*, default/*, allow
+
+    #g, github:ssejzer@techzer.com.ar, role:admin
+    g, ssejzer@techzer.com.ar, role:developer
 
   policy.default: role:readonly
   scopes: '[groups, email]'
