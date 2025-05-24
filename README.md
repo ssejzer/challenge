@@ -35,15 +35,15 @@ ArgoCD continuously monitors the GitHub Repo and applies the changes directly wi
 
 ### ArgoCD
 
-ArgoCD services run in the "argocd" namespace
-
 To access ArgoCD UI: [Link](https://challenge.hitechist.com:31522/)
 
-GitHub SSO allows members of the "sejzer" organization
+#### ArgoCD SSO authentication and permissions
 
-### ArgoCD RBAC roles and permissions
-
-GitHub SSO is working but I didn't manage to set RBAC properly. I can login but I can't deploy with my github user.
+ArgoCD is the Service Provider (SP) and GitHub Auth is the Identity Provider (IDP).
+Only members of the [sejzer organization](https://github.com/sejzer) are allowed.
+There are 2 roles defined in [argocd-rbac-cm.yaml](argocd/argocd-rbac-cm.yaml)
+- Admin. Can do everything, everywhere.
+- Developer. Can perform any action on the applications
 
 ### Prometheus
 
@@ -59,9 +59,11 @@ There new feature in version 2 is that it also prints the version.
 [Docker Hub](https://hub.docker.com/r/techzer/helloworld)
 
 Usage:
+```bash
 docker pull techzer/helloworld:2
+```
 
-### URLs
+### Application publicly accessible URL
 
 To access the aplication:
 [Link](http://challenge.hitechist.com:32003/)
@@ -72,14 +74,13 @@ To access the aplication:
 
 ### Application Deployment
 
-Application repository URL:
-[Link](https://github.com/ssejzer/challenge)
-
-just update the image in the master branch and ArgoCD will deploy it in the next minutes!
+The source code is in the [src](src) directory.
+To update the application you have to manually build the docker image and push it to [Docker Hub](https://hub.docker.com/r/techzer/helloworld) with a new tag.
+Then you just update the image version tag in the [helloworld.image.tag values.yaml file](https://github.com/ssejzer/challenge/blob/master/helm-charts/values.yaml#L4) at the master branch and ArgoCD will deploy it in the next minutes!
 
 ## Issues I had during the setup
 
-I didn't understand why there is a hockey stick
+I still didn't understand why there is a hockey stick.
 
 I loved argoCD. I didn't know about it and the idea of pulling the changes instead of the usual way is fantastic.
 And it's very smart. It knows when I move a manifest from one app to another.
