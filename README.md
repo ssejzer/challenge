@@ -23,12 +23,14 @@ ArgoCD continuously monitors the GitHub Repo and applies the changes directly wi
 
 ## Folder structure
 
+```bash
 ├── argocd. The infrastructure manifests.
 │   ├── custom-services. Additional resources to make it work in a non-cloud provided cluster
 ├── helm-charts. Application continuos monitored Helm charts
 ├── images. Images for this documentation
 ├── scripts. Development and testing scripts
 └── src. Contains the go source code of the app and the Dockerfile
+```
 
 
 ### ArgoCD
