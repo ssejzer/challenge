@@ -12,7 +12,7 @@ spec:
     helm:
       values: |
         metrics-server:
-          args:
+          arguments:
             - --cert-dir=/tmp
             - --secure-port=10250
             - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname

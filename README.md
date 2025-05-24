@@ -17,6 +17,8 @@ The [HelloWorld go application](src) is containeraized in a minimal image based 
 ArgoCD continuously monitors the GitHub Repo and applies the changes directly with the Kubernetes API
 ![Infrastructure Picture](images/infrastructure.png?raw=true "Infrastructure")
 
+### Namespaces
+
 - argoCD runs in the "argocd" namespace.
 - The HelloWorld application and the Envoy Proxy are deployed to the "challenge" namespace.
 - And Prometheus in the "monitoring" namespace.
@@ -81,6 +83,7 @@ docker pull techzer/helloworld:2
 To access the aplication:
 [Link](http://challenge.hitechist.com:32003/)
 
+
 ### Testing the application
 
 !!!!!!!!!!!
@@ -90,6 +93,10 @@ To access the aplication:
 The source code is in the [src](src) directory.
 To update the application you have to manually build the docker image and push it to [Docker Hub](https://hub.docker.com/r/techzer/helloworld) with a new tag.
 Then you just update the image version tag in the [helloworld.image.tag values.yaml file](https://github.com/ssejzer/challenge/blob/master/helm-charts/values.yaml#L4) at the master branch and ArgoCD will deploy it in the next minutes!
+
+#### Horizontal Pod Autoscaling
+
+The application deploys more PODs based on CPU usage.
 
 ## Issues I had during the setup
 
