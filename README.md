@@ -86,7 +86,8 @@ To access the aplication:
 
 ### Testing the application
 
-!!!!!!!!!!!
+To monitor the application, there's a [test script](scripts/test.sh) that can be included in CD or any monitoring tool.
+
 
 ### Application Deployment
 
