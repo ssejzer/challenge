@@ -8,7 +8,8 @@ spec:
   source:
     repoURL: https://github.com/kubernetes-sigs/metrics-server
     targetRevision: HEAD
-    path: manifests/base
+    #path: manifests/base
+    path: charts/metrics-server
     helm:
       values: |
         metrics-server:
