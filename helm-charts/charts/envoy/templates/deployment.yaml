@@ -17,6 +17,8 @@ spec:
       app: envoy-proxy
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
       labels:
         app: envoy-proxy
     spec:
