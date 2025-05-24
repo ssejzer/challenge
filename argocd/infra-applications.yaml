@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: argocd
     helm:
-      values: |i
+      values: |
         metrics-server:
           args:
             - --cert-dir=/tmp
