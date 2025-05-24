@@ -3,8 +3,12 @@ kind: ConfigMap
 
 data:
   policy.csv: |
+    # Full access
+    p, role:admin, *, *, *, allow
+
     g, github:ssejzer@techzer.com.ar, role:admin
-    g, sejzer:ssejzer@techzer.com.ar, role:admin
+    #g, sejzer:ssejzer@techzer.com.ar, role:admin
+
   policy.default: role:readonly
   scopes: '[groups, email]'
 
