@@ -1,4 +1,4 @@
-![Challenge Picture](cover.png?raw=true "Challenge")
+![Challenge Picture](images/cover.png?raw=true "Challenge")
 
 # DevOps Challenge
 
@@ -9,19 +9,27 @@
 
 ## Infrastructure
 
-It's a self-managed Kubernetes cluster installed in a single VM (Master and Node)
+It's a self-managed Kubernetes cluster installed in a single VM (Control Plane and a single Node)
 
-The deployment runs in the "challenge" namespace
+The [HelloWorld go application](src) is containeraized in a minimal image based on [Alpine Linux](https://hub.docker.com/_/alpine).
 
-DIAGRAM HERE!!!!
+
+ArgoCD continuously monitors the GitHub Repo and applies the changes directly with the Kubernetes API
+![Infrastructure Picture](images/infrastructure.png?raw=true "Infrastructure")
+
+- argoCD runs in the "argocd" namespace.
+- The HelloWorld application and the Envoy Proxy are deployed to the "challenge" namespace.
+- And Prometheus in the "monitoring" namespace.
 
 ## Folder structure
 
-/src
-Contains the source code of the app. It's just 1 file.
+├── argocd. The infrastructure manifests.
+│   ├── custom-services. Additional resources to make it work in a non-cloud provided cluster
+├── helm-charts. Application continuos monitored Helm charts
+├── images. Images for this documentation
+├── scripts. Development and testing scripts
+└── src. Contains the go source code of the app and the Dockerfile
 
-/scripts
-Development and testing scripts 
 
 ### ArgoCD
 
