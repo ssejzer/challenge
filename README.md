@@ -33,7 +33,7 @@ GitHub SSO allows members of the "sejzer" organization
 
 ### ArgoCD RBAC roles and permissions
 
-???????????
+GitHub SSO is working but I didn't manage to set RBAC properly. I can login but I can't deploy with my github user.
 
 ### Prometheus
 
@@ -70,6 +70,9 @@ just update the image in the master branch and ArgoCD will deploy it in the next
 ## Issues I had during the setup
 
 I didn't understand why there is a hockey stick
+
+I loved argoCD. I didn't know about it and the idea of pulling the changes instead of the usual way is fantastic.
+And it's very smart. It knows when I move a manifest from one app to another.
 
 I had a hard time finding why the Envoy didn't work until I realized it's because there is no Load Balancer Controller in self-managed clusters.
 In the past, I worked with Azure Kubernetes for production and minikube for dev. Lesson learned!
