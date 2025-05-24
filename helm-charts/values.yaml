@@ -1,15 +1,13 @@
 helloworld:
+  image:
+    repository: techzer/helloworld
+    tag: 1
   hpa:
     minReplicas: 2
     maxReplicas: 10
     CPUAverageUtilization: 50
     gatewayHost: pending
     port: 101010
-  image:
-    repository: techzer/helloworld
-    tag: 1
-  #httproute:
-  #  host: "challenge.hitechist.com"
 
 envoy:
   image:
