@@ -19,9 +19,16 @@ spec:
         podDisruptionBudget:
           enabled: false
         resources: {}
-        #server:
-        #  service:
-        #    type: LoadBalancer
+        server:
+          additionalScrapeConfigs:
+            - job_name: 'kubernetes-pods'
+              honor_labels: true
+              kubernetes_sd_configs:
+                - role: pod
+              relabel_configs:
+                - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+                  action: keep
+                  regex: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
