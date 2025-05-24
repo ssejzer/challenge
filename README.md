@@ -54,7 +54,13 @@ annotations:
 prometheus.io/scrape: 'true'
 ```
 
-To access Prometheus: [Link](http://challenge.hitechist.com:32001/)
+To access Prometheus UI, execute
+```bash
+kubectl -n monitoring port-forward service/prometheus-server 8080:80
+```
+
+And open the forwarded [Prometheus UI](http://localhost:8080/) in your browser.
+
 
 ## The application
 
