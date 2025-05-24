@@ -2,7 +2,7 @@
 
 # DevOps Challenge
 
-``diff
+```diff
 - This application is not ready for production and does not have security measures implemented
 ```
 
