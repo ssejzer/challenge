@@ -6,6 +6,7 @@ helloworld:
     minReplicas: 2
     maxReplicas: 10
     CPUAverageUtilization: 50
+    MemAverageValue: "16Mi"
 
 envoy:
   image:
