@@ -7,7 +7,7 @@ data:
     p, role:admin, *, *, *, allow
 
     g, github:ssejzer@techzer.com.ar, role:admin
-    #g, sejzer:ssejzer@techzer.com.ar, role:admin
+    g, ssejzer@techzer.com.ar, role:admin
 
   policy.default: role:readonly
   scopes: '[groups, email]'
