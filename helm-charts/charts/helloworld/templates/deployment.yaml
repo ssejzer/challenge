@@ -80,8 +80,12 @@ spec:
   metrics:
   - type: Resource
     resource:
-      name: cpu
+      name: memory
       target:
-        type: Utilization
-        averageUtilization: {{ .Values.hpa.CPUAverageUtilization }}
+        type: AverageValue
+        averageValue: 16Mi
+      #name: cpu
+      #target:
+      #  type: Utilization
+      #  averageUtilization: {{ .Values.hpa.CPUAverageUtilization }}
 
