@@ -7,7 +7,7 @@ helloworld:
     port: 101010
   image:
     repository: techzer/helloworld
-    tag: 1
+    tag: 2
   httproute:
     host: "challenge.hitechist.com"
 
